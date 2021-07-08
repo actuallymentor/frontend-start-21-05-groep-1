@@ -1,0 +1,17 @@
+{
+  "name": "lesson-5-npm-jest",
+  "version": "0.0.1",
+  "description": "Mentor schrijft een demo",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mentor Palokaj <mentor@palokaj.co> (http://github.com/actuallymentor)",
+  "license": "MIT",
+  "dependencies": {
+    "jest": "^27.0.6",
+    "qrcode": "^1.4.4",
+    "readline-sync": "^1.4.10"
+  }
+}

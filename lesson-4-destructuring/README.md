@@ -5,7 +5,7 @@ slide-transition: true
 theme: Plain Jane, 3
 
 
-# Functions & Scope
+# Destructuring
 
 ---
 
@@ -184,6 +184,7 @@ const carMeta = { serial: Math.random(), milage: 8001 }
 
 // Prepare data for showing to customer
 const salesData = { ...car, ...carMeta }
+const salesDataTwo = { ...car, ...carMeta, serial: Math.random() }
 
 // Display data to customer
 console.log( 'Hello customer! Would you like to buy tis car?', salesData )
@@ -212,7 +213,7 @@ console.log( `Car ${ carName } has meta:`, carMeta )
 const salesData = { serial: Math.random(), milage: 8001, name: 'Tesla', model: '1' }
 
 // Generate meta from sales data
-const { name, model, ...carMeta } = salesData
+const { name: carName, model, ...carMeta } = salesData
 
 // Log out the car meta
 console.log( `Car ${ carName } has meta:`, carMeta )
