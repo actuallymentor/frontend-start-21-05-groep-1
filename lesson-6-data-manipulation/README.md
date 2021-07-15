@@ -54,7 +54,7 @@ console.log( doubles )
 const numbers = [ 1, 2,3,4,5 ]
 
 const doubles = numbers.map( function( number ) {
-	return nuber * 2
+	return number * 2
 } )
 
 console.log( doubles )
@@ -66,7 +66,7 @@ console.log( doubles )
 const numbers = [ 1, 2,3,4,5 ]
 
 const triples = numbers.map( number => {
-	return nuber * 3
+	return number * 3
 } )
 
 console.log( triples )
@@ -178,13 +178,13 @@ console.log( people )
 ---
 
 ```javascript
-const people = [
+let people = [
 	{ name: 'bob', age: 5 },
 	{ name: 'bobina', age: 55 },
 	{ name: 'bobster', age: 19 }
 ]
 
-people.filter( person => person.age > 5 )
+people = people.filter( person => person.age > 5 )
 .map( person => {
 	return { ...person, age: person.age * 2 }
 } )
