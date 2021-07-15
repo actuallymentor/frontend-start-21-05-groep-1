@@ -36,7 +36,7 @@ Assume the next person working on this code is a psycho who knows where you live
 ---
 
 ```javascript
-const numbers = [ 1, 2,3,4,5 ]
+const numbers = [ 1, 2, 3, 4, 5 ]
 
 const doubles = []
 
@@ -51,7 +51,7 @@ console.log( doubles )
 ---
 
 ```javascript
-const numbers = [ 1, 2,3,4,5 ]
+const numbers = [ 1, 2, 3, 4, 5 ]
 
 const doubles = numbers.map( function( number ) {
 	return number * 2
@@ -63,7 +63,7 @@ console.log( doubles )
 ---
 
 ```javascript
-const numbers = [ 1, 2,3,4,5 ]
+const numbers = [ 1, 2, 3, 4, 5 ]
 
 const triples = numbers.map( number => {
 	return number * 3
