@@ -84,7 +84,7 @@ const people = [
 const adults = []
 
 for (var i = 0; i < people.length; i++) {
-	if( people[i].age >= 18 ) adults.push( eople[i] )
+	if( people[i].age >= 18 ) adults.push( people[i] )
 }
 
 console.log( adults )
