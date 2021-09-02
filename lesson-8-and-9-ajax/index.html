@@ -2,27 +2,39 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<title></title>
+	<title>Super mega awesome AQI app</title>
 
-	<script src='./main.js' async></script>
+	<!-- Axios http module, reason for use: students use it in other assignments -->
 	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+	<!-- Load app assets -->
 	<link rel="stylesheet" type="text/css" href="./style.css">
+	<script src='./main.js' async></script>
+
 </head>
 <body>
 
 	<main>
+
+		<!-- Always visible search interface -->
 		<h1>Air quality checker</h1>
 		<input id="query" type="text" placeholder="Type your city" />
 		<input id="search" type="submit" value="search">
 
+		<!-- Error box, hidden until needed -->
 		<p class="hide" id="error"></p>
 
+		<!-- Result box, hidden until needed -->
 		<div class="hide" id="result">
 			<p id="result_city">loading...</p>
 			<p id="result_aqi">loading...</p>
 		</div>
 
 	</main>
+
+	<footer>
+		Copyright Not-Novi™️
+	</footer>
 
 </body>
 </html>

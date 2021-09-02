@@ -1,11 +1,20 @@
+// ///////////////////////////////
+// Demo AQI app based on WAQI API
+// ///////////////////////////////
+
 // Check if file was loaded
 console.log( 'I AM ALIVE' )
 
 // ///////////////////////////////
 // API helpers
+// API docs available at: https://aqicn.org/
 // ///////////////////////////////
+
+// API config: throttled at 1000/second request so don't worry about the key being in a repo
 const API_KEY = `3469bc81b08d109e016b4817338356f41c1b6f3a`
 const API_URL = `https://api.waqi.info/feed`
+
+// Async get the AQI or specific error
 async function getDataOfCity( cityName='' ) {
 
 	try {
@@ -27,6 +36,8 @@ async function getDataOfCity( cityName='' ) {
 		return aqi
 
 	} catch( e ) {
+
+		// Log error details for debugging, but return user-friendly error for use in interface
 		console.error( 'API ERROR: ', e )
 		throw `The getDataOfCity function broke with: ${ e }`
 	}
@@ -37,6 +48,8 @@ async function getDataOfCity( cityName='' ) {
 // Document handlers
 // ///////////////////////////////
 window.onload = function() {
+
+	// Confirm JS was loaded
 	console.log( 'Document loaded' )
 
 
@@ -47,7 +60,7 @@ window.onload = function() {
 		const errorField = document.getElementById( 'error' )
 		const resultBox = document.getElementById( 'result' )
 
-		// get the input data
+		// Get the input data
 		console.log( 'Search was clicked' )
 		const { value: query } = document.getElementById( 'query' )
 		console.log( 'Search query: ', query )
@@ -71,12 +84,15 @@ window.onload = function() {
 
 		} catch( e ) {
 
-			
+			// Show error in interface
 			errorField.classList.remove( 'hide' )
 			errorField.innerHTML = `Error: ${ e }`
 
 		} finally {
+
+			// Reset search button value
 			event.target.value = 'search'
+			
 		}
 
 	} )
