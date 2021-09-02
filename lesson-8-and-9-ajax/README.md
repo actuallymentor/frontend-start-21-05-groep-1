@@ -4,6 +4,7 @@ autoscale: true
 slide-transition: true
 theme: Plain Jane, 3
 
+[.text: alignment(center)]
 
 # APIs & AJAX
 
@@ -125,7 +126,10 @@ function slothSpeaks( delay, words ) {
 
     return new Promise( ( resolve, reject ) => {
 
-        setTimeout( (  ) => console.log( words ), delay )
+        setTimeout( (  ) => {
+            console.log( words )
+            resolve()
+        }, delay )
 
     } )
 
@@ -142,7 +146,7 @@ module.exports {
 ```javascript
 const { fox, sloth } = require( './speakers' )
 
-sloth( 2000, 'I am tired' ).then( (  ) => {
+sloth( 2000, 'I am tired' ).then( function() {
     fox( 'I HAD CAFFEINE' )
 } ).then( (  ) => {
     fox( 'A LOT OF CAFFEINE' )
@@ -168,7 +172,10 @@ function slothSpeaks( delay, words ) {
 
     return new Promise( ( resolve, reject ) => {
 
-        setTimeout( (  ) => console.log( words ), delay )
+        setTimeout( (  ) => {
+            console.log( words )
+            resolve()
+        }, delay )
 
     } )
 
@@ -217,7 +224,10 @@ function slothSpeaks( delay, words ) {
 
     return new Promise( ( resolve, reject ) => {
 
-        setTimeout( (  ) => console.log( words ), delay )
+        setTimeout( (  ) => {
+            console.log( words )
+            resolve()
+        }, delay )
 
     } )
 
@@ -266,7 +276,10 @@ function slothSpeaks( delay, words ) {
 
     return new Promise( ( resolve, reject ) => {
 
-        setTimeout( (  ) => console.log( words ), delay )
+        setTimeout( (  ) => {
+            console.log( words )
+            resolve()
+        }, delay )
 
     } )
 
@@ -274,8 +287,12 @@ function slothSpeaks( delay, words ) {
 
 function wasp() {
     const randomness = Math.random()
-    if( randomness < 0.5 ) throw 'I STING YOU INSTEAD'
-    return 'I leave now'
+
+    return new Promise( ( resolve, reject ) => {
+        if( randomness < 0.5 ) reject( 'I STING YOU INSTEAD' )
+        resolve ( 'I leave now' )
+    } )
+    
 }
 
 module.exports {
