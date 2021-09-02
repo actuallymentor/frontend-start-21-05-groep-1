@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+
+	<script src='./main.js' async></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="./style.css">
+</head>
+<body>
+
+	<main>
+		<h1>Air quality checker</h1>
+		<input id="query" type="text" placeholder="Type your city" />
+		<input id="search" type="submit" value="search">
+
+		<p class="hide" id="error"></p>
+
+		<div class="hide" id="result">
+			<p id="result_city">loading...</p>
+			<p id="result_aqi">loading...</p>
+		</div>
+
+	</main>
+
+</body>
+</html>
